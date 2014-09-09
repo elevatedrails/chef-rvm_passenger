@@ -72,7 +72,7 @@ template "#{apache_dir}/mods-available/passenger.conf" do
   mode    '0755'
 end
 
-apache_module "passenger" do
-  module_path node['rvm_passenger']['module_path']
-  filename "/tmp/aaaa"
-end
+#apache_module "passenger" do
+#  module_path node['rvm_passenger']['module_path']
+#  filename "/tmp/aaaa"
+#end
