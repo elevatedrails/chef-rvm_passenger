@@ -74,4 +74,5 @@ end
 
 apache_module "passenger" do
   module_path node['rvm_passenger']['module_path']
+  filename "/tmp/aaaa"
 end
