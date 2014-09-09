@@ -40,6 +40,7 @@ ruby_block "Calculate node['rvm_passenger']['module_path']" do
 
     node.set['rvm_passenger']['module_path'] =
       "#{root_path}/#{ext_dir}/apache2/mod_passenger.so"
+    @mod_path =  "#{root_path}/#{ext_dir}/apache2/mod_passenger.so"
     Chef::Log.debug(%{Setting node['rvm_passenger']['module_path'] = } +
       %{"#{node['rvm_passenger']['module_path']}"})
   end
@@ -73,7 +74,7 @@ template "#{apache_dir}/mods-available/passenger.conf" do
 end
 
 apache_module "passenger" do
-  raise "Got mod: #{ node['rvm_passenger']['module_path']}"
+  raise "Got mod: #{ @mod_path}"
   module_path node['rvm_passenger']['module_path']
   filename "/tmp/aaaa"
 end
