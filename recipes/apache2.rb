@@ -73,6 +73,7 @@ template "#{apache_dir}/mods-available/passenger.conf" do
 end
 
 apache_module "passenger" do
+  raise "Got mod: #{ node['rvm_passenger']['module_path']}"
   module_path node['rvm_passenger']['module_path']
   filename "/tmp/aaaa"
 end
